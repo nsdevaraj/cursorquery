@@ -37,3 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 # cursor-project-experiment
 
 i want a user onboarding flow @v0.md 
+i want a gantt project management on canvas implementation with sample data @v0.md 
