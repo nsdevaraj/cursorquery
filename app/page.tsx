@@ -1,15 +1,12 @@
-"use client";
-import React from 'react';
-import DateRangeSlider from '../components/DateRangeSlider';
+"use client"; 
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24"> 
-      <DateRangeSlider />
+      <div>empty page</div>
     </main>
   );
 }
-
 // import React, {SetStateAction, useState } from 'react';
 // import PromptForm from '../components/PromptForm';
 // import ImageDisplay from '../components/imageDisplay';
@@ -32,3 +29,4 @@ export default function Home() {
 //     </div>
 //   );
 // }
+
