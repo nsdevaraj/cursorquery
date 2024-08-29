@@ -1,9 +1,12 @@
-"use client";   
+"use client";
+import React from 'react';
+import DateRangeSlider from '../components/date-range-slider';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div> empty page</div>
+      <h1 className="text-3xl font-bold mb-8">Date Range Selector</h1>
+      <DateRangeSlider />
     </main>
   );
 }
@@ -30,4 +33,3 @@ export default function Home() {
 //     </div>
 //   );
 // }
- 
