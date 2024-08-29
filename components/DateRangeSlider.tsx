@@ -56,19 +56,16 @@ export default function DateRangeSlider() {
 
   return (
     <div className="w-full max-w-md mx-auto p-6 space-y-6">
-      <div className="text-center text-sm font-medium text-gray-600">
-        Selected Range: {format(startDate, "MMM d, yyyy")} - {format(endDate, "MMM d, yyyy")}
-      </div>
       <div
         ref={sliderRef}
-        className="relative h-5 w-full"
+        className="relative h-12 w-full"
         role="slider"
         aria-valuemin={0}
         aria-valuemax={totalDays}
         aria-valuenow={range[1]}
         aria-valuetext={`From ${format(startDate, "MMM d, yyyy")} to ${format(endDate, "MMM d, yyyy")}`}
       >
-        <div className="absolute top-2 left-0 right-0 h-1 bg-gray-200 rounded-full">
+        <div className="absolute top-1/2 left-0 right-0 h-2 bg-blue-100 rounded-full -translate-y-1/2">
           <div
             className="absolute h-full bg-blue-500 rounded-full"
             style={{
@@ -80,8 +77,8 @@ export default function DateRangeSlider() {
         {range.map((value, index) => (
           <div
             key={index}
-            className="absolute top-0 w-5 h-5 bg-white shadow-md rounded-full border-2 border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform hover:scale-110 cursor-pointer"
-            style={{ left: `calc(${(value / totalDays) * 100}% - 10px)` }}
+            className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full shadow-md cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            style={{ left: `calc(${(value / totalDays) * 100}% - 2rem)` }}
             onMouseDown={(e) => handleMouseDown(e, index)}
             tabIndex={0}
             role="slider"
@@ -89,10 +86,12 @@ export default function DateRangeSlider() {
             aria-valuemax={totalDays}
             aria-valuenow={value}
             aria-valuetext={format(addDays(minDate, value), "MMM d, yyyy")}
-          />
+          >
+            {format(addDays(minDate, value), "d,MMM")}
+          </div>
         ))}
       </div>
-      <div className="flex justify-between text-xs text-gray-500">
+      <div className="flex justify-between text-xs text-gray-500 px-2">
         <span>{format(minDate, "MMM d, yyyy")}</span>
         <span>{format(maxDate, "MMM d, yyyy")}</span>
       </div>
